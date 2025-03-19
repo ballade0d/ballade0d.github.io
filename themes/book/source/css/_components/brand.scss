@@ -1,0 +1,33 @@
+@use "../variables";
+
+.book-brand {
+  display: flex;
+  position: fixed;
+  top: 0.85rem;
+  left: variables.$sidebar-starting-pd;
+  height: variables.$sidebar-brand-height;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+
+    font-size: variables.$sidebar-brand-fsize;
+    font-weight: bold;
+    color: variables.$book-primary-link-color;
+    text-decoration: none;
+
+    img {
+      height: variables.$sidebar-brand-fsize * 2;
+      width: variables.$sidebar-brand-fsize * 2;
+    }
+
+    span {
+      margin-left: 0.5rem;
+    }
+  }
+
+  a:hover {
+    color: variables.$book-primary-link-color;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,25 @@
+@use "../variables";
+
+.book-navbar {
+  padding-top: 0;
+  padding-right: variables.$post-horizontal-pd-lg;
+  padding-bottom: 1.5rem;
+  padding-left: variables.$post-horizontal-pd-lg;
+
+  i {
+    color: variables.$book-primary-link-color;
+  }
+
+  @media all and (min-width: variables.$pc-media) {
+    display: none;
+  }
+
+  @media all and (max-width: variables.$pcs-media) {
+    display: block;
+  }
+
+  @media all and (max-width: variables.$pc-media) {
+    padding-right: variables.$post-horizontal-pd-md;
+    padding-left: variables.$post-horizontal-pd-md;
+  }
+}

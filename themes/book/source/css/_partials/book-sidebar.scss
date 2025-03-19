@@ -1,0 +1,33 @@
+@use "sass:meta";
+@use "../variables";
+
+.book-sidebar {
+  position: fixed;
+  width: variables.$sidebar-width;
+  height: 100%;
+  z-index: 500;
+
+  background-color: #f7f8f9;
+  transition: transform 0.2s;
+
+  &.show {
+    transform: translateX(0);
+  }
+
+  &.hide {
+    transform: translateX(-100%);
+  }
+
+  @media all and (min-width: variables.$pc-media) {
+    transform: translateX(0);
+  }
+
+  @media all and (max-width: variables.$pcs-media) {
+    transform: translateX(-100%);
+  }
+
+  @include meta.load-css("../_components/brand");
+  @include meta.load-css("../_components/menu");
+}
+
+@include meta.load-css("../_components/sidebar-toggle");

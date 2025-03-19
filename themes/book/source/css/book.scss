@@ -1,0 +1,91 @@
+@use "sass:meta";
+@use "variables";
+
+.book-container {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  margin: 0;
+  height: 100%;
+  font-size: variables.$font-size-base;
+}
+
+body {
+  font-size: variables.$font-size-small;
+}
+
+a {
+  color: variables.$book-link-color;
+}
+
+a:visited {
+  color: variables.$book-link-visited-color;
+}
+
+a:hover {
+  color: variables.$book-link-hover-color;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.off-canvas-overlay {
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 499;
+
+  &.show {
+    display: block;
+  }
+
+  @media all and (min-width: variables.$pc-media) {
+    display: none !important;
+  }
+}
+
+.off-canvas-content {
+  height: 100%;
+  font-family: variables.$content-font-family;
+  transition: margin 200ms;
+
+  @include meta.load-css("_partials/book-content");
+
+  &.extend {
+    margin-left: 0;
+  }
+
+  @media all and (min-width: variables.$pc-media) {
+    margin-left: variables.$sidebar-width;
+    padding: variables.$content-padding-xl variables.$content-padding-xl;
+  }
+
+  @media all and (min-width: variables.$pad-media) and (max-width: variables.$pcs-media) {
+    padding: variables.$content-padding-xl variables.$content-padding-lg;
+  }
+
+  @media all and (max-width: variables.$pads-media) {
+    padding: variables.$content-padding-xl variables.$content-padding-md;
+  }
+}
+
+@include meta.load-css("_partials/book-navbar");
+@include meta.load-css("_partials/book-sidebar");
+@include meta.load-css("_partials/book-archive");

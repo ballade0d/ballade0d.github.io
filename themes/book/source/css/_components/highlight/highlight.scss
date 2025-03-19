@@ -1,0 +1,207 @@
+@use "sass:map";
+$highlight-theme: hexo-theme-config("codeblock.highlight_theme");
+@use "theme";
+@use "diff";
+@use "../../variables";
+
+%code-block {
+  font-family: variables.$code-font-family;
+  background: theme.$highlight-background;
+  color: theme.$highlight-foreground;
+  line-height: variables.$font-size-smallest * 2;
+  margin: variables.$line-margin auto variables.$line-margin;
+}
+
+%disable-user-select {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+code {
+  font-family: variables.$code-font-family;
+  border-radius: variables.$code-border-radius;
+  padding: 2px 4px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+pre {
+  @extend %code-block;
+  overflow: auto;
+  padding: 10px;
+
+  code {
+    background: none;
+    color: theme.$highlight-foreground;
+    padding: 0;
+    text-shadow: none;
+  }
+}
+
+.highlight {
+  @extend %code-block;
+  font-size: variables.$font-size-smallest;
+  overflow: auto;
+
+  *::selection {
+    background: theme.$highlight-selection;
+  }
+
+  pre {
+    border: 0;
+    margin: 0;
+    padding: 6px 0;
+  }
+
+  table {
+    border: 0;
+    margin: 0;
+    width: auto;
+  }
+
+  td {
+    border: 0;
+    padding: 0;
+  }
+
+  figcaption {
+    position: relative;
+    background: map.get(theme.$highlight-gutter, bg-color);
+    color: map.get(theme.$highlight-gutter, color);
+    line-height: 1em;
+    margin: 0;
+    padding: 0.5em;
+    &::before,
+    &::after {
+      content: " ";
+      display: table;
+    }
+
+    a {
+      color: theme.$highlight-foreground;
+      position: absolute;
+      right: 6px;
+
+      &:hover {
+        border-bottom-color: theme.$highlight-foreground;
+      }
+    }
+  }
+
+  .marked {
+    background: #f8e9c0;
+    border-bottom: 0.05rem solid #ffe7ab;
+    border-radius: 0.1rem;
+    color: #3b4351;
+    padding: 0.05rem 0.1rem 0;
+  }
+
+  .gutter pre {
+    background: map.get(theme.$highlight-gutter, bg-color);
+    color: map.get(theme.$highlight-gutter, color);
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: right;
+  }
+
+  .code pre {
+    background: theme.$highlight-background;
+    padding-left: 10px;
+    width: 100%;
+  }
+}
+.gutter {
+  @extend %disable-user-select;
+}
+
+.gist table {
+  width: auto;
+
+  td {
+    border: 0;
+  }
+}
+
+pre {
+  // For diff highlight
+  .deletion {
+    background: diff.$highlight-deletion;
+  }
+
+  .addition {
+    background: diff.$highlight-addition;
+  }
+
+  .meta {
+    color: theme.$highlight-yellow;
+    // @extend %disable-user-select;
+  }
+
+  .comment {
+    color: theme.$highlight-comment;
+  }
+
+  .variable,
+  .attribute,
+  .tag,
+  .name,
+  .regexp,
+  .ruby .constant,
+  .xml .tag .title,
+  .xml .pi,
+  .xml .doctype,
+  .html .doctype,
+  .css .id,
+  .css .class,
+  .css .pseudo {
+    color: theme.$highlight-red;
+  }
+
+  .number,
+  .preprocessor,
+  .built_in,
+  .builtin-name,
+  .literal,
+  .params,
+  .constant,
+  .command {
+    color: theme.$highlight-orange;
+  }
+
+  .ruby .class .title,
+  .css .rules .attribute,
+  .string,
+  .symbol,
+  .value,
+  .inheritance,
+  .header,
+  .ruby .symbol,
+  .xml .cdata,
+  .special,
+  .formula {
+    color: theme.$highlight-green;
+  }
+
+  .title,
+  .css .hexcolor {
+    color: theme.$highlight-aqua;
+  }
+
+  .function,
+  .python .decorator,
+  .python .title,
+  .ruby .function .title,
+  .ruby .title .keyword,
+  .perl .sub,
+  .javascript .title,
+  .coffeescript .title {
+    color: theme.$highlight-blue;
+  }
+
+  .keyword,
+  .javascript .function {
+    color: theme.$highlight-purple;
+  }
+}

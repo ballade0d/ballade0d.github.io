@@ -1,0 +1,29 @@
+@use "sass:meta";
+@use "../variables";
+
+.book-content {
+  padding: 0 variables.$post-horizontal-pd-lg;
+
+  @media all and (max-width: variables.$pc-media) {
+    padding: 0 1.25rem;
+  }
+
+  @include meta.load-css("../_components/post");
+  @include meta.load-css("../_components/highlight/highlight");
+}
+
+.book-post-info {
+  position: fixed;
+  font-size: variables.$font-size-smaller;
+
+  @media all and (min-width: variables.$pc-media) {
+    max-width: variables.$post-info-max-width-xl;
+  }
+
+  @media all and (min-width: variables.$pad-media) and (max-width: variables.$pcs-media) {
+    max-width: variables.$post-info-max-width-lg;
+  }
+
+  @include meta.load-css("../_components/post-meta");
+  @include meta.load-css("../_components/toc");
+}
