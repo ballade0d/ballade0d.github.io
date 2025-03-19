@@ -71,7 +71,6 @@ function pack_menu_accordion() {
 
 // highlight current tab
 function highlight_current_tab() {
-  console.log("A");
   document.querySelectorAll(".book-menu a").forEach((item) => {
     if (!item.getAttribute("href")) return; // if href has no value
     // normalized url
@@ -83,8 +82,6 @@ function highlight_current_tab() {
     if (url.slice(-1) == "/") {
       url = url.slice(0, -1);
     }
-    console.log(url);
-    console.log(item.href);
     if (item.href === url) {
       item.classList.add("current-tab");
       var parent = item.parentNode;
