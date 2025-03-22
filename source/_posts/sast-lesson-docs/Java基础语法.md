@@ -75,7 +75,7 @@ double salary = 5000.75; // 声明并初始化一个双精度浮点数 salary
 - **命名清晰：** 变量名应清楚地反映信息或意图，例如使用`studentCount`而不是`sc`
 - **遵循约定：** Java 通常使用驼峰命名法，如`myVariableName`。参考：[维基百科-驼峰命名法](https://zh.wikipedia.org/zh-hans/駝峰式大小寫)
 
-![camel-case](/camel-case.png)
+![camel-case](./camel-case.png)
 
 ## 运算符
 

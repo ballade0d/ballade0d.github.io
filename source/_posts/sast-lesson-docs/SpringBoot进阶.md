@@ -11,7 +11,7 @@ tags: [Java, SpringBoot]
 
 JWT（JSON Web Token）是一种开放标准（RFC 7519），用于在网络应用环境间安全地传递信息。信息以 JSON 对象的形式进行编码，经过签名保证安全性，通常用于身份验证和信息交换。
 
-![jwt](/jwt.png)
+![jwt](./jwt.png)
 
 一个 JWT 实际上是一个字符串，它由三部分组成，每部分之间用点（`.`）分隔，然后经过 Base64 处理：
 
@@ -53,7 +53,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 ## 拦截器
 
-![interceptor](/interceptor.png)
+![interceptor](./interceptor.png)
 
 ### 定义拦截器
 
@@ -98,7 +98,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
 一般来说，JWT 参数添加在请求头中
 
-![request](/request.png)
+![request](./request.png)
 
 ```java
 @Override
