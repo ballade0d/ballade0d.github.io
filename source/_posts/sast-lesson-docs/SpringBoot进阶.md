@@ -1,6 +1,5 @@
 ---
-title: "Web组 第八次授课"
-description: "SpringBoot进阶"
+title: "SpringBoot进阶"
 date: "Dec 8 2024"
 categories: [授课]
 tags: [Java, SpringBoot]
@@ -88,8 +87,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
   @Resource
   private MyInterceptor interceptor;
 
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
+  @Override
+  public void addInterceptors(InterceptorRegistry registry) {
     registry.addInterceptor(interceptor).excludePathPatterns("/login");
   }
 }

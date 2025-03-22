@@ -1,12 +1,11 @@
 ---
-title: "Web组 第六次授课"
-description: "反射及其应用、SpringBoot基础"
+title: "反射及其应用、SpringBoot基础"
 date: "Nov 24 2024"
 categories: [授课]
 tags: [Java, SpringBoot]
 ---
 
-## 反射及其应用、SpringBoot 基础
+# 反射及其应用、SpringBoot 基础
 
 ## 反射
 

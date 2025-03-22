@@ -1,6 +1,5 @@
 ---
-title: "Web组 第五次授课"
-description: "异常处理、IO、多线程、Maven及常用的库"
+title: "异常处理、IO、多线程、Maven及常用的库"
 date: "Nov 17 2024"
 categories: [授课]
 tags: [Java]
@@ -305,37 +304,37 @@ Maven 项目使用项目对象模型（Project Object Model，POM）来配置。
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!--project是pom.xml根元素，它包含了pom.xml的一些约束信息-->
-<!-- xmlns										命名空间，类似包名-->
-<!-- xmlns:xsi								xml遵循的标签规范-->
-<!--xsi:schemaLocation				定义xmlschema的地址，xml书写时需要遵循的语法-->
+<!-- xmlns: 命名空间，类似包名-->
+<!-- xmlns:xsi: xml遵循的标签规范-->
+<!--xsi:schemaLocation: 定义xmlschema的地址，xml书写时需要遵循的语法-->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-		<!-- 指定了当前pom.xml版本，目前固定为4.0.0版本。-->
+    <!-- 指定了当前pom.xml版本，目前固定为4.0.0版本。-->
     <modelVersion>4.0.0</modelVersion>
 
     <!--  属于哪个组，一般是域名的倒序  -->
     <groupId>fun.sast</groupId>
-		<!--  定义当前项目的唯一ID，一个groupId下面可能多个项目 -->
+    <!--  定义当前项目的唯一ID，一个groupId下面可能多个项目 -->
     <artifactId>maven-demo</artifactId>
-  	<!--  定义项目当前的版本  -->
+    <!--  定义项目当前的版本  -->
     <version>1.0-SNAPSHOT</version>
 
-  	<!--  定义变量，在其他地方进行使用  -->
+    <!--  定义变量，在其他地方进行使用  -->
     <properties>
-      	<!--java版本 -->
+        <!--java版本 -->
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-		<!--定义的依赖清单，有所依赖包都需要写在这个标签里面-->
-		<dependencies>
+    <!--定义的依赖清单，有所依赖包都需要写在这个标签里面-->
+    <dependencies>
       ...
-  	</dependencies>
+    </dependencies>
 
-  	<!--项目的构建配置-->
-  	<build>
-  	</build>
+    <!--项目的构建配置-->
+    <build>
+    </build>
 </project>
 ```
 

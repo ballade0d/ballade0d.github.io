@@ -1,6 +1,5 @@
 ---
-title: "Web组 第二次授课"
-description: "Java基础语法"
+title: "Java基础语法"
 date: "Oct 26 2024"
 categories: [授课]
 tags: [Java]
