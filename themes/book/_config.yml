@@ -1,6 +1,6 @@
 home_page: Home.md # filepath under /source/
 menu_page: Menu.md # filepath under /source/
-author_img: favicon.jpg
+author_img: portrait.jpg
 favicon_url: favicon.jpg # filepath of favicon
 
 zoom_image: true
