@@ -231,7 +231,7 @@ func divide(a, b float64) (float64, error) {
 **defer 的特性：**
 
 1. 关键字 defer 用于注册延迟调用
-2. 这些调用直到 return 前才被执。因此，可以用来做资源清理
+2. 这些调用直到 return 前才被执行。因此，可以用来做资源清理
 3. 多个 defer 语句，按先进后出的方式执行
 4. defer 语句中的变量，在 defer 声明时就决定了
 
@@ -261,31 +261,6 @@ func main() {
 }
 ```
 
-这个输出并不会像我们预计的输出 c b a,而是输出 c c c
-
-正确使用方法：
-
-```go
-package main
-
-import "fmt"
-
-type Test struct {
-    name string
-}
-
-func (t *Test) Close() {
-    fmt.Println(t.name, " closed")
-}
-func main() {
-    ts := []Test{{"a"}, {"b"}, {"c"}}
-    for _, t := range ts {
-        t2 := t
-        defer t2.Close()
-    }
-}
-```
-
 ### Error 与 Panic
 
 Go 语言的多值返回特性，使得它在返回常规的值时，还能轻松地返回详细的错误描述。使用这个特性来提供详细的错误信息是一种良好的风格。例如 os 库中：
@@ -297,7 +272,7 @@ func Create(name string) (file *File, err Error)
 在调用这个函数的时候可以通过返回值来捕获异常
 
 ```go
-file, err := os.Create("file.txt");
+file, err := os.Create("file.txt")
 ```
 
 Panic 会产生一个运行时错误并终止程序，该函数接受一个任意类型的实参（一般为字符串），并在程序终止时打印。
@@ -405,11 +380,11 @@ func main(){
 **fmt**
 fmt 包实现了类似 C 语言 printf 和 scanf 的格式化 I/O。主要分为向外输出内容和获取输入内容两大部分。
 
-**Time**
+**time**
 时间和日期是我们编程中经常会用到的，本文主要介绍了 Go 语言内置的 time 包的基本用法。
 
 **strconv**
-strconv 包实现了基本数据类型与其字符串表示的转换，主要有以下常用函数： Atoi()、Itia()、parse 系列、format 系列、append 系列。
+strconv 包实现了基本数据类型与其字符串表示的转换，主要有以下常用函数： Atoi()、Itoa()、parse 系列、format 系列、append 系列。
 
 ## Gin 基本用法
 
